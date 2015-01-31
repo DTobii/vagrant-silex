@@ -8,6 +8,14 @@ $app->get('/welcome/{name}', function ($name) use ($app) {
     );
 });
 
+$app->get('/static/{name}', function ($name) use ($app) {
+    return $app['templating']->render(
+        'static.html.php',
+        array('name'=> $name)
+    );
+});
+
+
 $app->get('/welcome-twig/{name}', function ($name) use ($app) {
     return $app['twig']->render(
         'hello.html.twig',
