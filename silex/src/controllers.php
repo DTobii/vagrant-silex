@@ -8,11 +8,8 @@ $app->get('/welcome/{name}', function ($name) use ($app) {
     );
 });
 
-$app->get('/static/{name}', function ($name) use ($app) {
-    return $app['templating']->render(
-        'static.html.php',
-        array('name'=> $name)
-    );
+$app->get('/static',function () use($app) {
+    return $app['templating']->render('static.html.php');
 });
 
 
