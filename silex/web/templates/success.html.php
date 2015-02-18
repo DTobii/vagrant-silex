@@ -1,6 +1,6 @@
 <?php
 $view->extend('layout.html.php');
-$view['slots']->set('title', 'Erfolg"');
+$view['slots']->set('title', 'Erfolg!');
 ?>
 
 <body>
@@ -12,6 +12,7 @@ $view['slots']->set('title', 'Erfolg"');
                     <div class="alert alert-success" role="alert">Gespeichert!</div>
                     <div class="panel-body">
                         Die Formulardaten wurden erfolgreich verarbeitet.
+                        </br>
                         Die Eingabe war:
                         </br>
                         Title: <?php echo $title; ?>

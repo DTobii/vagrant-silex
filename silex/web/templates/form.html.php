@@ -11,20 +11,25 @@ $view['slots']->set('title', 'Formhandling');
                     <?php if($error==true){
                         echo "<div class='alert alert-danger' role='alert'>Bitte alle Felder ausfuellen!</div>";
                     } ?>
+                    <?php if($save==true){
+                        echo "<div class='alert alert-success' role='alert'>Gespeichert!</div>";
+                    } ?>
                     <form method="post" action="/form">
                         <div class="form-group">
                             <label for="title">Titel</label>
-                            <input type="text" class="form-control" id="title" name="title"
-                                   placeholder="Gib einen Titel an.">
+                            <input  value="<?php echo $title ?>" type="text" class="form-control" id="title" name="title"
+                                   placeholder="Gib einen Titel an."  >
                         </div>
                         <div class="form-group">
                             <label for="mail">Your Mail:</label>
-                            <input type="email" class="form-control" id="mail" name="mail" placeholder="E-Mail">
+                            <input  value="<?php echo $mail ?>" type="email" class="form-control" id="mail" name="mail" placeholder="E-Mail"  >
+
                         </div>
+
                         <div class="form-group">
                             <label for="message">Beitrag</label>
                             <textarea type="text" rows="5" columns="30" class="form-control" name="text"
-                                      id="text"></textarea>
+                                      id="text"  > <?php echo $text ?></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Absenden</button>
                     </form>

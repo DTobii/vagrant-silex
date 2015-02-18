@@ -15,22 +15,43 @@ $app->get('/static/profile', function () use ($app) {
     return $app['templating']->render('static.profile.html.php', array());
 });
 $app->match('/form', function (Request $request) use ($app) {
-
-    if($request->isMethod("post")){
-        $title=$request->get("title");
-        $text=$request->get("text");
-        $mail=$request->get("mail");
-        if($title=="" || $text=="" || $mail ==""){ //gibt eine Fehlerseite zurück
-            return $app['templating']->render('form.html.php', array('error' => true));
-        }else{ //Erfolg des Eintrags
-            return $app['templating']->render('success.html.php', array('title'=>$title,'text'=>$text,'mail'=>$mail));
+    $error = false;
+    $template_name="form.html.php";
+    $title = $request->get("title");
+    $text = $request->get("text");
+    $mail = $request->get("mail");
+    if ($request->isMethod("post")) {
+        if ($title == "" || $text == "" || $mail == "") { //gibt eine Fehlerseite zurück
+            $error = true;
+        } else { //Erfolg des Eintrags
+            //$dbConnection = $app['db'];
+            //$date = date('Y-m-d');
+            //$dbConnection->insert('blog_post', array('title' => $title, 'text' => $text, 'created_at' => $date));
+            $template_name="asksave.html.php";
         }
-    }else {
-        //an dieser Stelle könnte man auch die einzelnen Variablen der Request Variable an das Array übergeben.
-
-        return $app['templating']->render('form.html.php', array('request' => $request,'error'=>false));
     }
+    //an dieser Stelle könnte man auch die einzelnen Variablen der Request Variable an das Array übergeben.
+
+    return $app['templating']->render($template_name, array('title' => $title, 'text' => $text, 'mail' => $mail, 'error'=>$error,'save'=>false));
 });
+
+$app->match('/save/blog', function(Request $request) use ($app){
+    $template_name="form.html.php";
+    $name=$request->get("buttonVersion");
+    $save=false; //Für die Anzeige.
+    $title = $request->get("title");
+    $text = $request->get("text");
+    $mail = $request->get("mail");
+    if($name=="save") {
+        $dbConnection = $app['db'];
+        $date = date('Y-m-d');
+        $dbConnection->insert('blog_post', array('title' => $title, 'text' => $text, 'created_at' => $date));
+        $save=true;
+    }
+
+    return $app['templating']->render($template_name, array('title' => $title, 'text' => $text, 'mail' => $mail, 'error'=>false, 'save'=>$save));
+});
+
 $app->get('/static/page3', function () use ($app) {
     return $app['templating']->render('Page3.html.php', array());
 });
