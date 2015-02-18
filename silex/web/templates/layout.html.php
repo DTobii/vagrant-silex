@@ -1,15 +1,21 @@
 <?php //$view['slots']->output('title', 'Default title');
-$title = $view["slots"]->get("title");
+/**
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
+$slots=$view['slots'];
+$title = $slots->get("title");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage | <?php $view['slots']->output('title') ?></title>
+    <title>Homepage | <?php $slots->output('title') ?></title>
     <script src="/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <base href="http://localhost:8001/">
     <!-- Scripts für das Menü zum öffnen und schließen. -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -33,8 +39,8 @@ $title = $view["slots"]->get("title");
                 <li <?= $title == "Home" ? "class=\"active\"" : "" ?>><a href="/static"><span
                             class="glyphicon glyphicon-home" aria-hidden="true"></span> Home <span class="sr-only">(current)' ? ''</span></a>
                 </li>
-                <li <?= $title == "Page2" ? "class=\"active\"" : "" ?>><a href="/static/page2"><span
-                            class="glyphicon glyphicon-user" aria-hidden="true"></span> Page2 <span class="sr-only"> (current)' ? ''</span></a>
+                <li <?= $title == "Formhandling" ? "class=\"active\"" : "" ?>><a href="/form"><span
+                            class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Form <span class="sr-only"> (current)' ? ''</span></a>
                 </li>
                 <li <?= $title == "Page3" ? "class=\"active\"" : "" ?>><a href="/static/page3"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"></span> Page3 <span class="sr-only"> (current)' ? ''</span></a>
@@ -54,7 +60,7 @@ $title = $view["slots"]->get("title");
 
 
 <!-- <hr/> -->
-<?php $view['slots']->output('_content') ?>
+<?php $slots->output('_content') ?>
 <!-- <hr/> -->
 
 <!-- <div id="footer"> -->
@@ -62,7 +68,7 @@ $title = $view["slots"]->get("title");
         Erstellt von Tobias Fuertjes als Abgabeprojekt für das Fach WebEngeneering.
         <br>
         <a href="/impressum">Impressum</a>
-        </li>
+
     </footer>
 <!--</div> -->
 </body>
