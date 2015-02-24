@@ -3,6 +3,8 @@ $view->extend('layout.html.php');
 $view['slots']->set('title', 'Sind Sie sich sicher?');
 ?>
 
+<!-- Zeigt die Daten die eingegeben wurden und fragt, ob diese Daten korrekt sind -->
+
 <body>
 <div class="container">
     <div class="row">
@@ -28,6 +30,7 @@ $view['slots']->set('title', 'Sind Sie sich sicher?');
                             <textarea type="text" rows="5" columns="30" class="form-control" name="text"
                                       id="text" readonly ><?php echo $text ?> </textarea>
                             </div>
+                            <!-- Buttons zur Auswahl: -->
                             <p><button type="submit"  name="buttonVersion" value="save" class="btn btn-success" role="button"> <span
                                         class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Speichern</button></p>
 

@@ -8,13 +8,13 @@ $app->get('/welcome/{name}', function ($name) use ($app) {
     );
 });
 
-$app->get('/static', function () use ($app) {
-    return $app['templating']->render('static.html.php');
+$app->get('/home', function () use ($app) {
+    return $app['templating']->render('home.html.php');
 });
-$app->get('/static/profile', function () use ($app) {
-    return $app['templating']->render('static.profile.html.php', array());
+$app->get('/profile', function () use ($app) {
+    return $app['templating']->render('profile.html.php', array());
 });
-$app->match('/form', function (Request $request) use ($app) {
+$app->match('/enterblog', function (Request $request) use ($app) {
     $error = false;
     $template_name="form.html.php";
     $title = $request->get("title");
@@ -50,6 +50,17 @@ $app->match('/save/blog', function(Request $request) use ($app){
     }
 
     return $app['templating']->render($template_name, array('title' => $title, 'text' => $text, 'mail' => $mail, 'error'=>false, 'save'=>$save));
+});
+$app->match('/readpost', function (Request $request) use ($app) {
+    $dbConnection =$app['db'];
+    $id= $request->get("nextid");
+    $posts=$dbConnection->fetchAssoc('SELECT * FROM blog_post WHERE id= ?', array($id));
+    return $app['templating']->render('blog.html.php', array('post'=>$posts,'id'=>$id));
+});
+$app->get('/blog', function () use ($app) {
+    $dbConnection =$app['db'];
+    $posts=$dbConnection->fetchAll('SELECT * FROM blog_post');
+    return $app['templating']->render('allEntries.html.php', array('posts'=>$posts));
 });
 
 $app->get('/static/page3', function () use ($app) {

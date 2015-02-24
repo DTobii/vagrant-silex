@@ -1,0 +1,4 @@
+#blognavigationtext{
+    /* Im Block im Menü das Aufzählungszeichen entfernen */
+    list-style-type: none;
+}

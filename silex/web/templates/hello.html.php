@@ -3,3 +3,5 @@
 <?php $view['slots']->set('title', "Title") ?>
 
 Hello <?= $name; ?>!
+
+<!-- Placeholder -->
