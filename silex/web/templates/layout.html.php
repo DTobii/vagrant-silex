@@ -10,6 +10,7 @@ $title = $slots->get("title");
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Homepage | <?php $slots->output('title') ?></title>
     <script src="/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -43,7 +44,7 @@ $title = $slots->get("title");
                 <li <?= $title == "blog" ? "class=\"active\"" : "" ?>><a href="/blog"><span
                             class="glyphicon glyphicon-book" aria-hidden="true"></span> Blog <span class="sr-only"> (current)' ? ''</span></a>
                 </li>
-                <li <?= $title == "Formhandling" ? "class=\"active\"" : "" ?>><a href="/form"><span
+                <li <?= $title == "Formhandling" ? "class=\"active\"" : "" ?>><a href="/enterblog"><span
                             class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Blogeintrag schreiben<span
                             class="sr-only"> (current)' ? ''</span></a>
                 </li>
@@ -51,31 +52,29 @@ $title = $slots->get("title");
                             class="glyphicon glyphicon-user" aria-hidden="true"></span> Page3 <span class="sr-only"> (current)' ? ''</span></a>
                 </li>-->
                 <li <?= $title == "Profile" ? "class=\"active\"" : "" ?>><a href="/profile"><span
-                            class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil <span class="sr-only"> (current)' ? ''</span></a>
+                            class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil des Erstellers <span
+                            class="sr-only"> (current)' ? ''</span></a>
                 </li>
-
                 <!-- php Sorgt dafür, das das richtige auf der Website als Highlightet angezeigt wird -->
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+                <li <?= $title == "Login" ? "class=\"active\"" : "" ?>><a href="/login"><span
+                            class="glyphicon glyphicon-user" aria-hidden="true"></span> Login <span class="sr-only"> (current)' ? ''</span></a>
                 </li>
+
             </ul>
         </div>
     </div>
 </nav>
 
-
-<!-- <hr/> -->
 <?php $slots->output('_content') ?>
-<!-- <hr/> -->
 
-<!-- <div id="footer"> -->
 <footer class="footer">
     Erstellt von Tobias Fuertjes als Abgabeprojekt für das Fach WebEngeneering.
     <br>
     <a href="/impressum">Impressum</a>
 
 </footer>
-<!--</div> -->
 </body>
 </html>

@@ -69,7 +69,7 @@ $app->register(new DoctrineServiceProvider(), array(
     ),
 ));
 
-
+$app->register(new Silex\Provider\SessionServiceProvider());
 
 
 return $app;
