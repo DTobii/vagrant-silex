@@ -33,7 +33,7 @@ $title = $slots->get("title");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <p class="navbar-text">My first Bootstrapsite</p>
+            <p class="navbar-text">Navigation: </p>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -48,11 +48,8 @@ $title = $slots->get("title");
                             class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Blogeintrag schreiben<span
                             class="sr-only"> (current)' ? ''</span></a>
                 </li>
-                <!--<li <?= $title == "Page3" ? "class=\"active\"" : "" ?>><a href="/static/page3"><span
-                            class="glyphicon glyphicon-user" aria-hidden="true"></span> Page3 <span class="sr-only"> (current)' ? ''</span></a>
-                </li>-->
                 <li <?= $title == "Profile" ? "class=\"active\"" : "" ?>><a href="/profile"><span
-                            class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil des Erstellers <span
+                            class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Profil des Erstellers <span
                             class="sr-only"> (current)' ? ''</span></a>
                 </li>
                 <!-- php Sorgt dafür, das das richtige auf der Website als Highlightet angezeigt wird -->
@@ -71,7 +68,7 @@ $title = $slots->get("title");
 <?php $slots->output('_content') ?>
 
 <footer class="footer">
-    Erstellt von Tobias Fuertjes als Abgabeprojekt für das Fach WebEngeneering.
+    Erstellt von Tobias Fuertjes als Abgabeprojekt für die Vorlesung Webengineering.
     <br>
     <a href="/impressum">Impressum</a>
 

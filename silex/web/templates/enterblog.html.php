@@ -5,7 +5,7 @@ $view['slots']->set('title', 'Formhandling');
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-12">
-            <?php if ($user == true) { ?>
+            <?php if ($user == true) { ?>   <!-- Kontrolle ob es überhaupt einen angemeldeten User gibt -->
                 <div class="panel panel-default">
                     <div class="panel-heading">Neuer Beitrag</div>
                     <div class="panel-body">
@@ -23,10 +23,10 @@ $view['slots']->set('title', 'Formhandling');
                                        placeholder="Gib einen Titel an.">
                             </div>
                             <div class="form-group">
-                               <!-- <label for="message">Beitrag</label> -->
+                                <!-- <label for="message">Beitrag</label> -->
                                 <p>Beitrag</p>
-                            <textarea rows="5"  class="form-control" name="text"
-                                      id="text"> <?php echo $text ?></textarea>
+                            <textarea rows="5" class="form-control" name="text"
+                                      id="text"><?php echo $text ?></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Absenden</button>
                         </form>

@@ -32,8 +32,10 @@ $view['slots']->set('title', 'Blog');
                                             echo $post['text'][$counter];
                                         }
                                     }
-                                    ?>
-                                    ... <!-- Die Punkte die symbolisieren, dass es weiter geht -->
+                                    if (isset($post['text'][200])) { //Kontrolliert, ob überhaupt ... angezeigt werden muss, oder ob der Beitrag nicht doch kürzer ist
+                                        ?>
+                                        ... <!-- Die Punkte die symbolisieren, dass es weiter geht -->
+                                    <?php } ?>
                                     <form method='post' action='/readpost'>
                                         <br>
 

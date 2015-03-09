@@ -25,7 +25,7 @@ $view['slots']->set('title', 'Account');
                 ?>
                 <form method="post" action="/loginData">
                     <div class="form-group">
-                        <label for="title">Accountname</label>
+                        <p>Accountname</p>
                         <input type="text" class="form-control" id="username" name="username"
                                placeholder="Gib deinen Accountnamen an.">
                     </div>

@@ -1,4 +1,4 @@
-#blognavigationtext{
-    /* Im Block im Menü das Aufzählungszeichen entfernen */
+#blognavigationtext {
+    /* Im Block des Menüs das Aufzählungszeichen entfernen */
     list-style-type: none;
 }
