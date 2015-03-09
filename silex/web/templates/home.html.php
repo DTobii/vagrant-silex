@@ -16,10 +16,10 @@ $view['slots']->set('title', 'Home');
                                                                                        aria-hidden="true"></span>
                         Zum Block</a></p>
             </div>
-
         </div>
-
     </div>
+
+    <!-- Anzeige von Alerts -->
 
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
@@ -29,6 +29,7 @@ $view['slots']->set('title', 'Home');
             <!-- List Element -->
             <div class="alert alert-success" role="alert">Gruen</div>
         </div>
+        <!-- Anzeige von Text: -->
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="thumbnail">
                 <p>Willkommen auf meiner Seite. Sowohl diese Seite als auch die Seite "Profil des Erstellers" und die
@@ -50,7 +51,6 @@ $view['slots']->set('title', 'Home');
                     et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
         </div>
-
     </div>
 </div>
 

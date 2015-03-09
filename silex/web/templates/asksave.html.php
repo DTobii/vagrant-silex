@@ -14,6 +14,7 @@ $view['slots']->set('title', 'Sind Sie sich sicher?');
                     <div class="panel-body">
                         <form method="post" action="/save/blog">
                             <div class="form-group">
+                                <!-- Anzeige der eingegebenen Daten: -->
                                 <p>Titel</p>
                                 <input type="text" class="form-control" id="title" name="title"
                                        value="<?php echo $title ?>"
@@ -24,7 +25,7 @@ $view['slots']->set('title', 'Sind Sie sich sicher?');
                             <textarea rows="5" class="form-control" name="text"
                                       id="text" readonly><?php echo $text ?></textarea>
                             </div>
-                            <!-- Buttons zur Auswahl: -->
+                            <!-- Buttons zur Auswahl: Speichern oder nochmal bearbeiten -->
                             <p>
                                 <button type="submit" name="buttonVersion" value="save" class="btn btn-success"
                                         role="button"> <span

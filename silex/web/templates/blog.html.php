@@ -12,6 +12,7 @@ $view['slots']->set('title', 'Eintrag: ' . $id);
         <div class="col-xs-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <!-- Laden von Titel, Author und dem Text -->
                     <h3><?php echo "Titel: " . $post['title'] ?></h3>
                     <h5>Erstellt von: <?php echo $post['author'] ?></h5>
                 </div>

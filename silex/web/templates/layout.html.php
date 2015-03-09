@@ -24,6 +24,8 @@ $title = $slots->get("title");
 </head>
 <body>
 
+<!--Hauptseite des Layouts, also Navigationsleiste und Fußzeile -->
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,7 +37,7 @@ $title = $slots->get("title");
             </button>
             <p class="navbar-text">Navigation: </p>
         </div>
-
+        <!-- Navigationsleiste mit allen Buttons: -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li <?= $title == "Home" ? "class=\"active\"" : "" ?>><a href="/home"><span
@@ -64,9 +66,9 @@ $title = $slots->get("title");
         </div>
     </div>
 </nav>
-
+<!-- Hier wird nun der Inhalt eingefügt-->
 <?php $slots->output('_content') ?>
-
+<!--Danach folgt der Footer der auf das Impressum verlinkt.-->
 <footer class="footer">
     Erstellt von Tobias Fuertjes als Abgabeprojekt für die Vorlesung Webengineering.
     <br>

@@ -2,7 +2,7 @@
 $view['slots']->set('title', 'Impressum');
 ?>
 
-<!-- Impressum mit den Daten -->
+<!-- Impressum mit eventuellen Daten, einfaches HTML -->
 
 Ersteller dieser Seite: Tobias Fuertjes
 <br>
