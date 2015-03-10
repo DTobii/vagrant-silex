@@ -1,7 +1,12 @@
 <?php
 /**
+ * @var $app
+ * @var $successlogin
+ * @var $username
+ * @var $login
  * @var $view
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ *
  */
 $view->extend('layout.html.php');
 $view['slots']->set('title', 'Account');

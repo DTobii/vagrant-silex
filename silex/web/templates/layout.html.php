@@ -1,4 +1,4 @@
-<?php //$view['slots']->output('title', 'Default title');
+<?php
 /**
  * @var $view
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper

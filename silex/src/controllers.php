@@ -1,5 +1,9 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
+/** Route Controller
+ *
+ * @var $app
+ */
 
 //Route für die Homeseite
 $app->get('/home', function () use ($app) {

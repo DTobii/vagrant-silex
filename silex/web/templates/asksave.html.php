@@ -1,4 +1,11 @@
 <?php
+/**
+ * @var $text
+ * @var $save
+ * @var $title
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
 $view->extend('layout.html.php');
 $view['slots']->set('title', 'Sind Sie sich sicher?');
 ?>

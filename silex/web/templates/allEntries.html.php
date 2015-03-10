@@ -1,5 +1,7 @@
 <?php
 /**
+ * @var $post
+ * @var $posts
  * @var $view
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */

@@ -1,4 +1,15 @@
-<?php $view->extend('layout.html.php');
+<?php
+/**
+ * @var $text
+ * @var $user
+ * @var $error
+ * @var $save
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ *
+ */
+
+$view->extend('layout.html.php');
 $view['slots']->set('title', 'Formhandling');
 
 ?>

@@ -1,4 +1,10 @@
 <?php
+/**
+ * @var $post
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
+
 $view->extend('layout.html.php');
 $view['slots']->set('title', 'Eintrag: ' . $id);
 ?>
