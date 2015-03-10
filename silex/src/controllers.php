@@ -99,30 +99,9 @@ $app->match('/loginData', function (Request $request) use ($app) {
 });
 
 //session leeren -> Logout
-$app->match('logout', function () use ($app) {
+$app->match('/logout', function () use ($app) {
     $username = $app['session']->get('user')['username']; //der Username wird geladen
     $app['session']->remove('user'); //der Username wird gelöscht
     return $app['templating']->render('home.html.php', array());
 });
 
-//Zuvor eingefügte Seiten:
-
-
-$app->get('/static/page3', function () use ($app) {
-    return $app['templating']->render('Page3.html.php', array());
-});
-
-
-$app->get('/welcome-twig/{name}', function ($name) use ($app) {
-    return $app['twig']->render(
-        'hello.html.twig',
-        array('name' => $name)
-    );
-});
-
-$app->get('/welcome/{name}', function ($name) use ($app) {
-    return $app['templating']->render(
-        'hello.html.php',
-        array('name' => $name)
-    );
-});

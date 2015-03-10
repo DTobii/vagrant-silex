@@ -35,7 +35,7 @@ $title = $slots->get("title");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <p class="navbar-text">Navigation: </p>
+            <p class="navbar-text">Navigation </p>
         </div>
         <!-- Navigationsleiste mit allen Buttons: -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
